@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class CreateNewDay {
     public static void main(String[] args) throws IOException {
-        createNewDay(01);
+        createNewDay(03);
     }
 
     public static void createNewDay(int ... dayOfMonth) throws IOException {
@@ -37,7 +37,7 @@ public class CreateNewDay {
                         "public class dayXX_part1 {\n" +
                         "\n" +
                         "    public static void main(String[] args) throws IOException {\n" +
-                        "        String received = methodName(\"src/Year_2021/Day_XX/source.txt\")+\"\";\n" +
+                        "        String received = methodName(\"src/Year_2022/Day_XX/source.txt\")+\"\";\n" +
                         "        copyToClipboard(received);\n" +
                         "        System.out.println(\"----------------------------------------------------\");\n" +
                         "        System.out.println(\"FINAL RESULT: \"+received);\n" +
@@ -70,7 +70,7 @@ public class CreateNewDay {
                         "public class dayXX_part2 {\n" +
                         "\n" +
                         "    public static void main(String[] args) throws IOException {\n" +
-                        "        String received = methodName(\"src/Year_2021/Day_XX/source.txt\")+\"\";\n" +
+                        "        String received = methodName(\"src/Year_2022/Day_XX/source.txt\")+\"\";\n" +
                         "        copyToClipboard(received);\n" +
                         "        System.out.println(\"----------------------------------------------------\");\n" +
                         "        System.out.println(\"FINAL RESULT: \"+received);\n" +

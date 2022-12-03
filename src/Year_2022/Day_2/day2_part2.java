@@ -20,7 +20,7 @@ public class day2_part2 {
         String[] file = Files.readAllLines(Path.of(path)).toArray(new String[0]);
         long score = 0;
         for (int i = 0; i < file.length; i++) {
-            String game = file[i].replace(" ","").replace("A","1").replace("X","1").replace("B","2").replace("Y","2").replace("C","3").replace("Z","3");
+            String game = file[i].replaceAll(" ","").replaceAll("[A|X]","1").replaceAll("[B|Y]","2").replaceAll("[C|Z]","3");
             int opponent = Integer.parseInt(game.charAt(0)+"");
             int me = Integer.parseInt(game.charAt(1)+"");
             switch (me){
