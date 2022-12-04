@@ -18,10 +18,11 @@ public class day5_part1 {
 
     public static long methodName(String path) throws IOException {
         String[] file = Files.readAllLines(Path.of(path)).toArray(new String[0]);
+        long counter = 0;
         for (int i = 0; i < file.length; i++) {
             System.out.println(file[i]);
         }
-        return 0;
+        return counter;
     }
 
     public static void copyToClipboard(String received) {
