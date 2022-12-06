@@ -10,18 +10,31 @@ import java.awt.datatransfer.Clipboard;
 public class day6_part2 {
 
     public static void main(String[] args) throws IOException {
-        String received = methodName("src/Year_2022/Day_6/source.txt")+"";
+        String received = start_of_message_marker("src/Year_2022/Day_6/source.txt")+"";
         copyToClipboard(received);
         System.out.println("----------------------------------------------------");
         System.out.println("FINAL RESULT: "+received);
     }
 
-    public static long methodName(String path) throws IOException {
+    public static long start_of_message_marker(String path) throws IOException {
         String[] file = Files.readAllLines(Path.of(path)).toArray(new String[0]);
+        long counter = 0;
         for (int i = 0; i < file.length; i++) {
-            System.out.println(file[i]);
+            for (int ii = 0; ii < file[i].length()-13; ii++) {
+                if (!containsDublicates(file[i].substring(ii,ii+14))){
+                    counter += ii+14;
+                    break;
+                }
+            }
         }
-        return 0;
+        return counter;
+    }
+    public static boolean containsDublicates(String input){
+        for (int i = 0; i <input.length()-1; i++) {
+            String s = input +"";
+            if(s.replaceAll(input.charAt(i)+"","").length()<13) return true;
+        }
+        return false;
     }
 
     public static void copyToClipboard(String received) {
