@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 public class day7_part1 {
 
     public static void main(String[] args) throws IOException {
-        String received = methodName("src/Year_2022/Day_7/source.txt")+"";
+        String received = totalDirSize("src/Year_2022/Day_7/source.txt")+"";
         copyToClipboard(received);
         System.out.println("----------------------------------------------------");
         System.out.println("FINAL RESULT: "+received);
     }
 
-    public static long methodName(String path) throws IOException {
+    public static long totalDirSize(String path) throws IOException {
         String[] file = Files.readAllLines(Path.of(path)).toArray(new String[0]);
         List<String> pathComponents = new LinkedList<>();
         Map<String,Long> directories = new HashMap<>();

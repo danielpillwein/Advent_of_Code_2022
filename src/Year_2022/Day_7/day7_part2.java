@@ -6,10 +6,7 @@ import java.nio.file.Path;
 import java.awt.datatransfer.StringSelection;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class day7_part2 {
@@ -21,7 +18,7 @@ public class day7_part2 {
         System.out.println("FINAL RESULT: " + received);
     }
 
-    public static long freeDiskSpace(String path) throws IOException {
+    public static OptionalLong freeDiskSpace(String path) throws IOException {
         String[] file = Files.readAllLines(Path.of(path)).toArray(new String[0]);
         List<String> pathComponents = new LinkedList<>();
         Map<String, Long> directories = new HashMap<>();
@@ -55,10 +52,10 @@ public class day7_part2 {
             }
         }
         long neededDiskSpace = -40000000 + directories.get("/");
-        return Long.parseLong(String.valueOf(directories.values().stream()
+        return directories.values().stream()
                 .filter(x -> x >= neededDiskSpace)
                 .mapToLong(l -> l)
-                .min()));
+                .min();
     }
 
     public static void copyToClipboard(String received) {
