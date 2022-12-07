@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class CreateNewDay {
     public static void main(String[] args) throws IOException {
-        createNewDay(07);
+        createNewDay(8);
     }
 
     public static void createNewDay(int ... dayOfMonth) throws IOException {
