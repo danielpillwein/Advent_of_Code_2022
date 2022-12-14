@@ -45,14 +45,11 @@ public class day12_part1 {
         }
 
         int[] position = start;
-        int counter = 0;
-        int runs = 200;
         do {
             System.out.println("pos: "+position[0]+":"+position[1]);
             visits[position[0]][position[1]] = 0;
             updateNeighbours(position);
             position = updatePosition(position);
-            counter++;
             System.out.println("------------visits----------------");
             print(visits);
             System.out.println("------------DISTANCE----------------");
